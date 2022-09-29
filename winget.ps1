@@ -20,29 +20,7 @@ param (
 $Folder = "C:\Temp"
 $FolderContent = $Folder + "\*"
 
-
-$global:currenttime= Set-PSBreakpoint -Variable currenttime -Mode Read -Action {$global:currenttime= Get-Date -UFormat "%A %m/%d/%Y %R"}
-$foregroundColor1 = "Red"
-$foregroundColor2 = "Yellow"
-$writeEmptyLine = "`n"
-$writeSeperatorSpaces = " - "
-
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-<# Check if PowerShell is running as Administrator
-
-$currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
-$isAdministrator = $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-
-if ($isAdministrator -eq $false) 
-{
-    Write-Host ($writeEmptyLine + "# Please run PowerShell as Administrator" + $writeSeperatorSpaces + $currentTime)`
-    -foregroundcolor $foregroundColor1 $writeEmptyLine
-    exit
-}
-#>
-## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 ## Create Folder on C: if it not exists, else delete it's content
 
